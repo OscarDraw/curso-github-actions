@@ -1,0 +1,13 @@
+name: hello-world
+on: [push]
+jobs:
+  hello-world: 
+    runs-on: ubuntu-latest
+    steps:
+        - name: checkout
+          uses: actions/checkout@v4
+
+        - name: 📄 Mostrar archivo JavaScript
+          run: |
+            echo "contenido del js:"
+            cat hello_world.js
