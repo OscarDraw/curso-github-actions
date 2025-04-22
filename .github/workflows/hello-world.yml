@@ -7,7 +7,6 @@ jobs:
         - name: checkout
           uses: actions/checkout@v4
 
-        - name: 📄 Mostrar archivo JavaScript
-          run: |
-            echo "contenido del js:"
-            cat hello_world.js
+        - name: Super linter
+          uses: super-linter/super-linter@v7.3.0
+          
