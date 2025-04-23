@@ -1,0 +1,35 @@
+name: Expressions practice
+on:
+  push:
+    branches:
+      main
+  workflow_dispatch:
+    inputs:
+      ocupation:
+        description: 'Ocupation'
+        required: true
+        default: Developer
+        type: choice
+        options:
+          - Developer
+          - Secretary
+          - DBA
+jobs:
+  show-developer:
+    if: ${{ inputs.ocupation == 'Developer' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Define variable username"
+        run: echo "USERNAME=${{github.actor}}" >> $GITHUB_ENV
+
+      - name: "Define variable ocupation"
+        run: echo "OCUPATION=${{ inputs.ocupation }}" >> $GITHUB_ENV
+
+      - name: "Show ocupation"
+        run: python expression.py
+  show:
+    if: ${{ inputs.ocupation != 'Developer' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Show ocupation"
+        run: echo "${{github.actor}} trabaja como ${{ inputs.ocupation }}"

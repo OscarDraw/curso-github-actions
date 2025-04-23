@@ -10,8 +10,6 @@ on:
       - main
     types:
       - opened
-  schedule:
-    - cron: '30 * * * *'
   
       
 jobs:
