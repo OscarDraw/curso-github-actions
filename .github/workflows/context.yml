@@ -17,5 +17,4 @@ jobs:
       - run: echo "Runner ${{ runner.name }}"
       - run: echo "SO del runner ${{ runner.os }}"
       - name: Validar los secrets
-        if: env.secret_variable == 'TEST'
-        run: echo "La variable secreta coincide"
+        run: python validate-secret.py
