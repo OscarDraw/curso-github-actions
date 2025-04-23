@@ -1,0 +1,15 @@
+name: Context practice
+on: push
+jobs:
+  show-info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show repository info!
+        run: echo "Se ejecuta en la ref ${{ github.ref }}"
+      - run: echo "Se disparó por el evento ${{ github.event }}"
+      - run: echo "Disparado por ${{ github.actor }}"
+      - run: echo "Estado del job ${{ job.status }}"
+      - run: echo "Commit ${{ github.sha }}"
+      - run: echo "Runner ${{ runner.name }}"
+      - run: echo "SO del runner ${{ runner.os }}"
+      - run: echo "Esta es una variable en secrets ${{ secrets.test.TEST_VARIABLE }}"
