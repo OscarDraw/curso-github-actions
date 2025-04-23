@@ -1,4 +1,4 @@
-name: Aprendiendo GitHub Actions
+name: workflow initial
 run-name: ¡Estoy aprendiendo GitHub Actions!
 on: [push]
 jobs:
