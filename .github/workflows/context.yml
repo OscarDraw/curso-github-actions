@@ -4,7 +4,7 @@ jobs:
   show-info:
     runs-on: ubuntu-latest
     env:
-      secret_variable: ${{ secrets.SECRET_TEST || 'default' }}
+      secret_variable: ${{ secrets.SECRET_TEST }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
