@@ -12,6 +12,6 @@ jobs:
       - run: echo "Commit ${{ github.sha }}"
       - run: echo "Runner ${{ runner.name }}"
       - run: echo "SO del runner ${{ runner.os }}"
-      - run: echo "Esta es una variable en secrets ${{ secrets.TEST_VARIABLE }}"
+      - run: echo "Esta es una variable en secrets ${{ env.TEST_VARIABLE }}"
         env:
-          MI_SECRETO: ${{ secrets.TEST_VARIABLE }}
+          TEST_VARIABLE: ${{ secrets.TEST_VARIABLE || 'default' }}
