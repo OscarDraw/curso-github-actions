@@ -1,4 +1,4 @@
-name: Triggers
+name: workflow triggers
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Expressions practice
+name: workflow expression practice
 on:
   push:
     branches:
@@ -19,6 +19,9 @@ jobs:
     if: ${{ inputs.ocupation == 'Developer' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: "Define variable username"
         run: echo "USERNAME=${{github.actor}}" >> $GITHUB_ENV
 
