@@ -4,6 +4,8 @@ jobs:
   show-info:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: show repository info!
         run: echo "Se ejecuta en la ref ${{ github.ref }}"
       - run: echo "Se disparó por el evento ${{ github.event }}"
@@ -13,5 +15,5 @@ jobs:
       - run: echo "Runner ${{ runner.name }}"
       - run: echo "SO del runner ${{ runner.os }}"
       - env:
-          TEST_VARIABLE: ${{ secrets.TEST_VARIABLE || 'default' }}
-        run: echo $TEST_VARIABLE
+          secret_variable: ${{ secrets.SECRET_VARIABLE || 'default' }}
+        run: echo "Variable secreta ${{ env.secret_variable }}"
