@@ -6,6 +6,8 @@ jobs:
     env:
       secret_variable: ${{ secrets.SECRET_TEST || 'default' }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: show repository info!
         run: echo "Se ejecuta en la ref ${{ github.ref }}"
       - run: echo "Se disparó por el evento ${{ github.event }}"
